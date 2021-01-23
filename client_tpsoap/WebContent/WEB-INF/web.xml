@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <display-name>Sample Servlet Example</display-name>
+  
+  <servlet>
+  	<servlet-name>EnregistrementServletEns</servlet-name>
+  	<display-name>EnregistrementServletEns</display-name>
+  	<description>Test GET, POST methods of Servlet</description>
+  	<servlet-class>com.ensakh.client_soap.EnregistrementServletEns</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EnregistrementServletEns</servlet-name>
+  	<url-pattern>/EnregistrementServletEns</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>EnregistrementServletMod</servlet-name>
+  	<display-name>EnregistrementServletMod</display-name>
+  	<description>Test GET, POST methods of Servlet</description>
+  	<servlet-class>com.ensakh.client_soap.EnregistrementServletMod</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EnregistrementServletMod</servlet-name>
+  	<url-pattern>/EnregistrementServletMod</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>SuppressionServletEns</servlet-name>
+  	<display-name>SuppressionServletEns</display-name>
+  	<description>Test GET, POST methods of Servlet</description>
+  	<servlet-class>com.ensakh.client_soap.SuppressionServletEns</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SuppressionServletEns</servlet-name>
+  	<url-pattern>/SuppressionServletEns</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>SuppressionServletMod</servlet-name>
+  	<display-name>SuppressionServletMod</display-name>
+  	<description>Test GET, POST methods of Servlet</description>
+  	<servlet-class>com.ensakh.client_soap.SuppressionServletMod</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SuppressionServletMod</servlet-name>
+  	<url-pattern>/SuppressionServletMod</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+  	<servlet-name>ModificationServletEns</servlet-name>
+  	<display-name>ModificationServletEns</display-name>
+  	<description>Test GET, POST methods of Servlet</description>
+  	<servlet-class>com.ensakh.client_soap.ModificationServletEns</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ModificationServletEns</servlet-name>
+  	<url-pattern>/ModificationServletEns</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ModificationServletMod</servlet-name>
+  	<display-name>ModificationServletMod</display-name>
+  	<description>Test GET, POST methods of Servlet</description>
+  	<servlet-class>com.ensakh.client_soap.ModificationServletMod</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ModificationServletMod</servlet-name>
+  	<url-pattern>/ModificationServletMod</url-pattern>
+  </servlet-mapping>
+
+</web-app>
