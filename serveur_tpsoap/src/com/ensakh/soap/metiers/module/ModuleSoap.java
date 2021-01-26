@@ -1,12 +1,12 @@
-package com.ensakh.tpsoap.metiers;
+package com.ensakh.soap.metiers.module;
 
 import java.sql.SQLException;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-import com.ensakh.tpsoap.donnees.ModuleDao;
-import com.ensakh.tpsoap.entity.Module;
+import com.ensakh.soap.donnees.ModuleDao;
+import com.ensakh.soap.entity.Module;
 
 @WebService
 public class ModuleSoap {

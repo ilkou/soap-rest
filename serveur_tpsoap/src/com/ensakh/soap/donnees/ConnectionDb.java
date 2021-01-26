@@ -1,4 +1,4 @@
-package com.ensakh.tpsoap.donnees;
+package com.ensakh.soap.donnees;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;

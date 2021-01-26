@@ -1,9 +1,9 @@
-package com.ensakh.tpsoap.donnees;
+package com.ensakh.soap.donnees;
 
 import java.sql.SQLException;
 
+import com.ensakh.soap.entity.Enseignant;
 import com.mysql.jdbc.Connection;
-import com.ensakh.tpsoap.entity.Enseignant;
 
 public class EnseignantDao {
 

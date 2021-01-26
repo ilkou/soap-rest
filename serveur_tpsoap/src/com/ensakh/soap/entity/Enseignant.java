@@ -1,4 +1,4 @@
-package com.ensakh.tpsoap.entity;
+package com.ensakh.soap.entity;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

@@ -1,12 +1,12 @@
-package com.ensakh.tpsoap.metiers;
+package com.ensakh.soap.metiers.enseignant;
 
 import java.sql.SQLException;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-import com.ensakh.tpsoap.donnees.EnseignantDao;
-import com.ensakh.tpsoap.entity.Enseignant;
+import com.ensakh.soap.donnees.EnseignantDao;
+import com.ensakh.soap.entity.Enseignant;
 
 @WebService
 public class EnseignantSoap {
