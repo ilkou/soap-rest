@@ -35,13 +35,13 @@ public class SuppressionServletMod extends HttpServlet  {
 	        BufferedReader in = null;
 	         
 	        String xmlInput =
-	        		"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:met=\"http://metiers.tpsoap.ensakh.com/\">\n" + 
+	        		"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://module.metiers.soap.ensakh.com/\">\n" + 
 	    	        		"   <soapenv:Header/>\n" + 
 	    	        		"   <soapenv:Body>\n" + 
-	    	        		"      <met:suppression>\n" + 
+	    	        		"      <mod:suppression>\n" + 
 	    	        		"         <!--Optional:-->\n" + 
 	    	        		"         <arg0>" + req.getParameter("id") + "</arg0>\n" + 
-	    	        		"      </met:suppression>\n" + 
+	    	        		"      </mod:suppression>\n" + 
 	    	        		"   </soapenv:Body>\n" + 
 	    	        		"</soapenv:Envelope>";
 	         
@@ -86,6 +86,6 @@ public class SuppressionServletMod extends HttpServlet  {
 	        {
 	            e.printStackTrace();
 	        }
-		super.doPost(req, resp);
+	        resp.sendRedirect(req.getContextPath() + "/suppressionMod.jsp");
 	}
 }

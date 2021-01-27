@@ -34,10 +34,10 @@ public class EnregistrementServletMod extends HttpServlet {
 		BufferedReader in = null;
 	         
 		String xmlInput =
-				"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:met=\"http://metiers.tpsoap.ensakh.com/\">\n" + 
+				"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://module.metiers.soap.ensakh.com/\">\n" + 
 						"   <soapenv:Header/>\n" + 
 						"   <soapenv:Body>\n" + 
-						"      <met:enregistrement>\n" + 
+						"      <mod:enregistrement>\n" + 
 						"         <!--Optional:-->\n" + 
 						"         <arg0>\n" + 
 						"            <!--Optional:-->\n" + 
@@ -49,7 +49,7 @@ public class EnregistrementServletMod extends HttpServlet {
 						"            <!--Optional:-->\n" + 
 						"            <cni>" + req.getParameter("cni") + "</cni>\n" + 
 						"         </arg0>\n" + 
-						"      </met:enregistrement>\n" + 
+						"      </mod:enregistrement>\n" + 
 						"   </soapenv:Body>\n" + 
 						"</soapenv:Envelope>";
 	         
@@ -86,7 +86,7 @@ public class EnregistrementServletMod extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			super.doPost(req, resp);
+			resp.sendRedirect(req.getContextPath() + "/enregistrementMod.jsp");
 		}
 
 	}

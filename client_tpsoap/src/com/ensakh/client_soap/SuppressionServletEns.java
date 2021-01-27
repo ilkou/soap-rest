@@ -35,13 +35,13 @@ public class SuppressionServletEns extends HttpServlet  {
 	        BufferedReader in = null;
 	         
 	        String xmlInput =
-	        		"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:met=\"http://metiers.tpsoap.ensakh.com/\">\n" + 
+	        		"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ens=\"http://enseignant.metiers.soap.ensakh.com/\">\n" + 
 	        		"   <soapenv:Header/>\n" + 
 	        		"   <soapenv:Body>\n" + 
-	        		"      <met:suppression>\n" + 
+	        		"      <ens:suppression>\n" + 
 	        		"         <!--Optional:-->\n" + 
 	        		"         <arg0>" + req.getParameter("cni") + "</arg0>\n" + 
-	        		"      </met:suppression>\n" + 
+	        		"      </ens:suppression>\n" + 
 	        		"   </soapenv:Body>\n" + 
 	        		"</soapenv:Envelope>";
 	         
@@ -86,6 +86,7 @@ public class SuppressionServletEns extends HttpServlet  {
 	        {
 	            e.printStackTrace();
 	        }
-		super.doPost(req, resp);
+	        resp.sendRedirect(req.getContextPath() + "/suppressionEns.jsp");
+
 	}
 }

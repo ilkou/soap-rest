@@ -33,25 +33,25 @@ public class ModificationServletMod extends HttpServlet  {
 	        InputStreamReader isr = null;
 	        BufferedReader in = null;
 	         
-	        String xmlInput =
-	        		"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:met=\"http://metiers.tpsoap.ensakh.com/\">\n" + 
-	    	        		"   <soapenv:Header/>\n" + 
-	    	        		"   <soapenv:Body>\n" + 
-	    	        		"      <met:modification>\n" + 
-	    	        		"         <!--Optional:-->\n" + 
-	    	        		"         <arg0>\n" + 
-	    	        		"            <!--Optional:-->\n" + 
-	    	        		"            <id>" + req.getParameter("id") + "</id>\n" + 
-	    	        		"            <!--Optional:-->\n" + 
-	    	        		"            <nom>" + req.getParameter("nom") + "</nom>\n" + 
-	    	        		"            <!--Optional:-->\n" + 
-	    	        		"            <desc>" + req.getParameter("desc") + "</desc>\n" + 
-	    	        		"            <!--Optional:-->\n" + 
-	    	        		"            <cni>" + req.getParameter("cni") + "</cni>\n" + 
-	    	        		"         </arg0>\n" + 
-	    	        		"      </met:modification>\n" + 
-	    	        		"   </soapenv:Body>\n" + 
-	    	        		"</soapenv:Envelope>";
+	        String xmlInput = 
+	        		"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:mod=\"http://module.metiers.soap.ensakh.com/\">\n" + 
+	    	        "   <soapenv:Header/>\n" + 
+	    	        "   <soapenv:Body>\n" + 
+	    	        "      <mod:modification>\n" + 
+	    	        "         <!--Optional:-->\n" + 
+	    	        "         <arg0>\n" + 
+	    	        "            <!--Optional:-->\n" + 
+	    	        "            <id>" + req.getParameter("id") + "</id>\n" + 
+	    	        "            <!--Optional:-->\n" + 
+	    	        "            <nom>" + req.getParameter("nom") + "</nom>\n" + 
+	    	        "            <!--Optional:-->\n" + 
+	    	        "            <desc>" + req.getParameter("desc") + "</desc>\n" + 
+	    	        "            <!--Optional:-->\n" + 
+	    	        "            <cni>" + req.getParameter("cni") + "</cni>\n" + 
+	    	        "         </arg0>\n" + 
+	    	        "      </mod:modification>\n" + 
+	    	        "   </soapenv:Body>\n" + 
+	    	        "</soapenv:Envelope>";
 	         
 	        try
 	        {
@@ -94,7 +94,6 @@ public class ModificationServletMod extends HttpServlet  {
 	        {
 	            e.printStackTrace();
 	        }
-		super.doPost(req, resp);
+	        resp.sendRedirect(req.getContextPath() + "/modificationMod.jsp");
 	}
-	
 }

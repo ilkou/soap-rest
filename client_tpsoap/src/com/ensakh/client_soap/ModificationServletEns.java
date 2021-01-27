@@ -34,10 +34,10 @@ public class ModificationServletEns extends HttpServlet  {
 	        BufferedReader in = null;
 	         
 	        String xmlInput =
-	        		"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:met=\"http://metiers.tpsoap.ensakh.com/\">\n" + 
+	        		"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ens=\"http://enseignant.metiers.soap.ensakh.com/\">\n" + 
 	        		"   <soapenv:Header/>\n" + 
 	        		"   <soapenv:Body>\n" + 
-	        		"      <met:modification>\n" + 
+	        		"      <ens:modification>\n" + 
 	        		"         <!--Optional:-->\n" + 
 	        		"         <arg0>\n" + 
 	        		"            <!--Optional:-->\n" + 
@@ -57,7 +57,7 @@ public class ModificationServletEns extends HttpServlet  {
 					"            <!--Optional:-->\n" + 
 					"            <sexe>" + req.getParameter("sexe") + "</sexe>\n" + 
 	        		"         </arg0>\n" + 
-	        		"      </met:modification>\n" + 
+	        		"      </ens:modification>\n" + 
 	        		"   </soapenv:Body>\n" + 
 	        		"</soapenv:Envelope>";
 	         
@@ -102,7 +102,7 @@ public class ModificationServletEns extends HttpServlet  {
 	        {
 	            e.printStackTrace();
 	        }
-		super.doPost(req, resp);
+	        resp.sendRedirect(req.getContextPath() + "/modificationEns.jsp");
 	}
 	
 }

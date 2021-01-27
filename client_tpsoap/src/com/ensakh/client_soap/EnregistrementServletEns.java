@@ -24,9 +24,6 @@ public class EnregistrementServletEns extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String wsURL = "http://localhost:9997/enseignant";
-		URL url = null;
-		URLConnection connection = null;
-		HttpURLConnection httpConn = null;
 		String responseString = null;
 		String outputString = "";
 		OutputStream out = null;
@@ -34,10 +31,10 @@ public class EnregistrementServletEns extends HttpServlet {
 		BufferedReader in = null;
 	         
 		String xmlInput =
-				"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:met=\"http://metiers.tpsoap.ensakh.com/\">\n" + 
+				"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ens=\"http://enseignant.metiers.soap.ensakh.com/\">\n" + 
 				"   <soapenv:Header/>\n" + 
 				"   <soapenv:Body>\n" + 
-				"      <met:enregistrement>\n" + 
+				"      <ens:enregistrement>\n" + 
 				"         <!--Optional:-->\n" + 
 				"         <arg0>\n" + 
 				"            <!--Optional:-->\n" + 
@@ -57,14 +54,14 @@ public class EnregistrementServletEns extends HttpServlet {
 				"            <!--Optional:-->\n" + 
 				"            <sexe>" + req.getParameter("sexe") + "</sexe>\n" + 
 				"         </arg0>\n" + 
-				"      </met:enregistrement>\n" + 
+				"      </ens:enregistrement>\n" + 
 				"   </soapenv:Body>\n" + 
 				"</soapenv:Envelope>";
 	         
 			try {
-				url = new URL(wsURL);
-				connection = url.openConnection();
-				httpConn = (HttpURLConnection) connection;
+				URL url = new URL(wsURL);
+				URLConnection connection = url.openConnection();
+				HttpURLConnection httpConn = (HttpURLConnection) connection;
 
 				byte[] buffer = new byte[xmlInput.length()];
 				buffer = xmlInput.getBytes();
@@ -94,7 +91,8 @@ public class EnregistrementServletEns extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			super.doPost(req, resp);
+			resp.sendRedirect(req.getContextPath() + "/enregistrementEns.jsp");
+
 		}
 
 	}
