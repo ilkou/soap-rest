@@ -38,7 +38,7 @@ public class EnseignantDao {
 	
 	public void modification(Enseignant e) throws SQLException
 	{
-		String sql = "update  enseignant set nom = ?, prenom = ?, age = ?, adresse = ?, ville = ?"
+		String sql = "update enseignant set nom = ?, prenom = ?, age = ?, adresse = ?, ville = ?"
 				+ ", photo = ?, sexe = ? where cni = ?";
 
 		

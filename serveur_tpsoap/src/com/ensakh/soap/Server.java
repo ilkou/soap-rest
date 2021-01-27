@@ -14,7 +14,7 @@ public class Server {
 		String local = "http://localhost";
 		Endpoint.publish(local + ":9998/module", new ModuleSoap());
 		Endpoint.publish(local + ":9997/enseignant", new EnseignantSoap());
-		System.out.println("Server is running at ");
+		System.out.println("Server is running at:");
 		System.out.println(local + ":9998/module");
 		System.out.println(local + ":9997/enseignant");
 

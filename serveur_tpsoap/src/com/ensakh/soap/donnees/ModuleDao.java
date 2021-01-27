@@ -2,7 +2,6 @@ package com.ensakh.soap.donnees;
 
 import java.sql.SQLException;
 
-import com.ensakh.soap.entity.Enseignant;
 import com.ensakh.soap.entity.Module;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.ResultSet;
@@ -52,7 +51,7 @@ public class ModuleDao {
 		statement.setString(4, e.getCni());
 		int rowsInserted = statement.executeUpdate();
 		if (rowsInserted > 0) {
-			System.out.println("A new user was inserted successfully!");
+			System.out.println("A module was inserted successfully!");
 		}
 
 	}
@@ -62,19 +61,19 @@ public class ModuleDao {
 		if (!conditionEstVerifie(e))
 			throw new SQLException("  un enseignat enseigne au plus deux module !\n");
 
-		String sql = "update enseignant set id_module = ?, nom = ?, description = ?, cni = ?";
+		String sql = "update module set nom = ?, description = ?, cni = ? where id_module = ?";
 
 		
 		java.sql.PreparedStatement statement = connectionDb.prepareStatement(sql);
 		
-		statement.setInt(1, e.getId());
-		statement.setString(2, e.getNom());
-		statement.setString(3, e.getDesc());
-		statement.setString(4, e.getCni());
+		statement.setString(1, e.getNom());
+		statement.setString(2, e.getDesc());
+		statement.setString(3, e.getCni());
+		statement.setInt(4, e.getId());
 		
 		int rowsInserted = statement.executeUpdate();
 		if (rowsInserted > 0) {
-			System.out.println("A new user was inserted successfully!");
+			System.out.println("A module was modified successfully!");
 		}
 
 	}
@@ -88,7 +87,7 @@ public class ModuleDao {
 		statement.setInt(1, id);
 		int rowsInserted = statement.executeUpdate();
 		if (rowsInserted > 0) {
-			System.out.println("A new user was inserted successfully!");
+			System.out.println("A module was deleted successfully!");
 		}
 
 	}
